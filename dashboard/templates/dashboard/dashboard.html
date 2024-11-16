@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard/style.css' %}">
+</head>
+
+<body>
+    <div class="dashboard">
+        <aside class="account-section">
+            <h2>Account</h2>
+            <p>Welcome, {{ user.username }}!</p>
+        </aside>
+        <main class="classes-section">
+            <header>
+                <h2>Classes</h2>
+                <a href="{% url 'create_class' %}" class="button">Create Class</a>
+            </header>
+            <ul id="classes-list">
+                {% for class in classes %}
+                    <li>
+                        <a href="{% url 'class_detail' class_id=class.id %}">{{ class.name }}</a>
+                    </li>
+                {% empty %}
+                    <li>No classes available.</li>
+                {% endfor %}
+            </ul>
+        </main>
+    </div>
+</body>
+
+</html>
