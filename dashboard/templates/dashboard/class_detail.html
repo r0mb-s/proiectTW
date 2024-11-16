@@ -13,6 +13,7 @@
             <p>{{ class.description }}</p>
             <p>Created on: {{ class.created_at }}</p>
             <h3>Students</h3>
+            <a href="{% url 'add_student' class_id=class.id %}" class="button">Add Student</a>
             <ul>
                 {% for student in students %}
                     <li>{{ student.first_name }} {{ student.last_name }} ({{ student.email }})</li>
@@ -21,6 +22,7 @@
                 {% endfor %}
             </ul>
             <h3>Quizes</h3>
+            <a href="{% url 'create_quiz' class_id=class.id %}" class="button">Create Quiz</a>
             <ul>
                 {% for quiz in quizes %}
                     <li>{{ quiz.name }}</li>
