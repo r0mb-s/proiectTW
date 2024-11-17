@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'dashboard/style.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/dashboard.css' %}">
 </head>
 
 <body>
     <div class="dashboard">
-        <aside class="account-section">
+        <div class="account-section">
             <h2>Account</h2>
             <p>Welcome, {{ user.username }}!</p>
-        </aside>
-        <main class="classes-section">
+        </div>
+        <div class="classes-section">
             <header>
                 <h2>Classes</h2>
                 <a href="{% url 'create_class' %}" class="button">Create Class</a>
@@ -29,7 +29,7 @@
                     <li>No classes available.</li>
                 {% endfor %}
             </ul>
-        </main>
+        </div>
     </div>
 </body>
 

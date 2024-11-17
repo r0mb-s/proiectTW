@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import QuizClass
+from .models import QuizClass, Quiz
 from .forms import QuizClassForm, QuizForm, StudentForm
 
 def dashboard(request):
@@ -50,3 +50,8 @@ def create_quiz(request, class_id):
         form = QuizForm()
 
     return render(request, 'dashboard/create_quiz.html', {'form': form, 'class': class_obj})
+
+def quiz_detail(request, class_id, quiz_id):
+    class_obj = get_object_or_404(QuizClass, id=class_id)
+    quiz_obj = get_object_or_404(Quiz, id=quiz_id)
+    return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj})

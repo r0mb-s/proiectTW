@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My test page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard/quiz_detail.css' %}">
+</head>
+
+<body>
+    <p>This is my quiz: {{ quiz.name }}</p>
+</body>
+
+</html>

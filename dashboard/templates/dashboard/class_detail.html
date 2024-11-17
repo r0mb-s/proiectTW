@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ class.name }} Details</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'dashboard/style.css' %}">
+        <link rel="stylesheet" href="{% static 'dashboard/class_detail.css' %}">
     </head>
     <body>
         <div class="class-detail-container">
@@ -25,7 +25,7 @@
             <a href="{% url 'create_quiz' class_id=class.id %}" class="button">Create Quiz</a>
             <ul>
                 {% for quiz in quizes %}
-                    <li>{{ quiz.name }}</li>
+                <li><a href="{% url 'quiz_detail' class_id=class.id quiz_id=quiz.id %}">{{ quiz.name }}</a></li>
                 {% empty %}
                     <li>No quizes made for this class.</li>
                 {% endfor %}
