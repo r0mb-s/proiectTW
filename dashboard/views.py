@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import QuizClass, Quiz
 from .forms import QuizClassForm, QuizForm, StudentForm
+from django.http import HttpResponse
+from io import BytesIO
+# from reportlab.pdfgen import canvas
 
 def dashboard(request):
     classes = QuizClass.objects.all()
@@ -55,3 +58,31 @@ def quiz_detail(request, class_id, quiz_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
     quiz_obj = get_object_or_404(Quiz, id=quiz_id)
     return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj})
+
+def generate_pdf(request, class_id, quiz_id):
+    #    buffer = BytesIO()
+    #    pdf = canvas.Canvas(buffer)
+    #    pdf.setTitle("Generated Test")
+    #
+    #    questions = Question.objects.all()
+    #    y = 800
+    #    
+    #    pdf.drawString(200, y, "Test Questions")
+    #    y -= 50
+    #
+    #    for question in questions:
+    #        pdf.drawString(50, y, f"Q: {question.question_text}")
+    #        y -= 20
+    #        pdf.drawString(70, y, f"1. {question.answer_1}")
+    #        y -= 20
+    #        pdf.drawString(70, y, f"2. {question.answer_2}")
+    #        y -= 20
+    #        pdf.drawString(70, y, f"3. {question.answer_3}")
+    #        y -= 20
+    #        pdf.drawString(70, y, f"4. {question.answer_4}")
+    #        y -= 40
+    #
+    #    pdf.save()
+    #    buffer.seek(0)
+    #    return HttpResponse(buffer, content_type='application/pdf')
+    return render(request, 'dashboard/idk.html')
