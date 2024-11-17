@@ -67,7 +67,8 @@ TEMPLATES = [
         },
     },
 ]
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_AGE = 3600
 WSGI_APPLICATION = 'proiectTW.wsgi.application'
 
 
@@ -132,7 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'  # Redirect to the home page (adjust as needed)
 LOGOUT_REDIRECT_URL = '/login/'  # Redirect to the login page
 
-AUTH_USER_MODEL = 'dashboard.CustomUser'
+# AUTH_USER_MODEL = 'dashboard.CustomUser'
 
 
 SOCIAL_AUTH_PIPELINE = (
@@ -145,5 +146,5 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
-    'dashboard.pipeline.save_google_profile',
+    # 'dashboard.pipeline.save_google_profile',
 )

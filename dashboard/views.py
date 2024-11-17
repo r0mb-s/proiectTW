@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 # from reportlab.pdfgen import canvas
 
 from googleapiclient.discovery import build
-import dashboard.cacat as cacat
+import dashboard.authhelper as authhelper
 
 def get_teacher_classes(service):
     """Fetch all classes where the user is a teacher."""
@@ -18,7 +18,7 @@ def get_teacher_classes(service):
 
 def google_classroom_classes(request):
     """View to display Google Classroom classes for the logged-in teacher."""
-    service = cacat.authenticate_user()
+    service = authhelper.authenticate_user()
     classes = get_teacher_classes(service)
     return render(request, 'classroom_classes.html', {'classes': classes})
 
