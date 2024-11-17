@@ -27,6 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # Required for social auth
+    'social_django',         # For social-auth-app-django
+    'questions',
     'dashboard',
     'mobile',
 ]
