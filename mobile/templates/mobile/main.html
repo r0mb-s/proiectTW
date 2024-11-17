@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take a Picture</title>
+</head>
+<body>
+    <h1>Take a Picture</h1>
+
+    <!-- Display the camera feed -->
+    <video id="video" width="640" height="480" autoplay></video>
+    <br>
+    <!-- A canvas element to capture the image -->
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+    <br>
+    <button id="capture">Take Picture</button>
+    <br>
+    <img id="photo" src="" alt="Your photo will appear here"/>
+
+    <form method="POST" enctype="multipart/form-data" id="upload-form">
+        {% csrf_token %}
+        <input type="hidden" name="photo" id="photo-input">
+        <button type="submit">Upload</button>
+    </form>
+
+    <script>
+        // Access the camera
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const photo = document.getElementById('photo');
+        const captureButton = document.getElementById('capture');
+        const photoInput = document.getElementById('photo-input');
+        const uploadForm = document.getElementById('upload-form');
+
+        // Initialize camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((error) => {
+                console.error("Error accessing the camera: ", error);
+            });
+
+        // Capture the image
+        captureButton.addEventListener('click', () => {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imageData = canvas.toDataURL('image/png');
+            photo.src = imageData;  // Display the captured image
+
+            // Set the image data to be submitted
+            photoInput.value = imageData;
+        });
+
+        // Handle form submission
+        uploadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData();
+            formData.append('photo', photoInput.value);
+
+            // Send the captured image to the server
+            fetch("{% url 'capture:upload' %}", {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

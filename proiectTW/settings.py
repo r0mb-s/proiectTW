@@ -21,8 +21,10 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('GOOGLE_CLIENT_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tw.freyda.work']
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Application definition
 
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'social_django',         # For social-auth-app-django
     'questions',
     'dashboard',
+    'mobile',
 ]
 
 MIDDLEWARE = [
