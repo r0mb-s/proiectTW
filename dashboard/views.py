@@ -132,4 +132,4 @@ def profile_view(request):
 
 def custom_logout(request):
     logout(request)  # Django's built-in logout function
-    return redirect('')  # Redirect to home or any page you prefer
+    return redirect('/')  # Redirect to home or any page you prefer
