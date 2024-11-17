@@ -4,6 +4,9 @@ from .forms import QuizClassForm, QuizForm, StudentForm
 from django.http import HttpResponse
 from io import BytesIO
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+from django.contrib.auth import logout
+
 # from reportlab.pdfgen import canvas
 
 from googleapiclient.discovery import build
@@ -22,8 +25,12 @@ def google_classroom_classes(request):
     classes = get_teacher_classes(service)
     return render(request, 'classroom_classes.html', {'classes': classes})
 
-
 def dashboard(request):
+    if not request.user.is_authenticated:
+        # Redirect to login page if the user is not authenticated
+        return redirect('http://127.0.0.1:8000/auth/login/google-oauth2/')  # Replace 'login' with the correct name of your login URL
+
+    # If authenticated, proceed with the normal flow
     classes = QuizClass.objects.all()
     return render(request, 'dashboard/dashboard.html', {'classes': classes})
 
@@ -107,11 +114,22 @@ def generate_pdf(request, class_id, quiz_id):
 
 
 
-@login_required
+
+from django.shortcuts import render, redirect
+
 def profile_view(request):
+    if not request.user.is_authenticated:
+        # Redirect to login page if the user is not authenticated
+        return redirect('http://127.0.0.1:8000/auth/login/google-oauth2/')  # or replace 'login' with the appropriate login URL name
+
+    # If authenticated, proceed with the normal flow
     user = request.user
-    return render(request, 'profile.html', {
+    return render(request, 'dashboard/profile.html', {
         'username': user.username,
         'email': user.email,
         'google_picture': getattr(user, 'google_picture_url', None),
     })
+
+def custom_logout(request):
+    logout(request)  # Django's built-in logout function
+    return redirect('')  # Redirect to home or any page you prefer

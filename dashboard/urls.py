@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
@@ -10,5 +11,7 @@ urlpatterns = [
     path('class/<int:class_id>/<int:quiz_id>/', views.quiz_detail, name='quiz_detail'),
     path('class/<int:class_id>/<int:quiz_id>/generate_pdf', views.generate_pdf, name='generate_pdf'),
     path('auth/', include('social_django.urls', namespace='social')),
+    path('profile/', views.profile_view, name='profile_view'),
+    path('logout/', LogoutView.as_view(), name='logout'), 
 ]
 
