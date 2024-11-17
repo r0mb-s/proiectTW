@@ -13,8 +13,10 @@ SECRET_KEY = 'django-insecure-6u1c^(kt1m0%j9a%pfx+jz0l9q*@%gn7xathwk$xo@&i)+o-uw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tw.freyda.work']
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Application definition
 
@@ -26,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard',
+    'mobile',
 ]
 
 MIDDLEWARE = [
