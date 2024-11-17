@@ -1,0 +1,6 @@
+<h1>Google Classroom Classes</h1>
+<ul>
+  {% for course in classes %}
+    <li>{{ course.name }} (ID: {{ course.id }})</li>
+  {% endfor %}
+</ul>

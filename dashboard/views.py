@@ -3,7 +3,25 @@ from .models import QuizClass, Quiz
 from .forms import QuizClassForm, QuizForm, StudentForm
 from django.http import HttpResponse
 from io import BytesIO
+from django.contrib.auth.decorators import login_required
 # from reportlab.pdfgen import canvas
+
+from googleapiclient.discovery import build
+import dashboard.cacat as cacat
+
+def get_teacher_classes(service):
+    """Fetch all classes where the user is a teacher."""
+    results = service.courses().list().execute()  # Fetch courses
+    courses = results.get('courses', [])
+    return courses
+
+
+def google_classroom_classes(request):
+    """View to display Google Classroom classes for the logged-in teacher."""
+    service = cacat.authenticate_user()
+    classes = get_teacher_classes(service)
+    return render(request, 'classroom_classes.html', {'classes': classes})
+
 
 def dashboard(request):
     classes = QuizClass.objects.all()
@@ -86,3 +104,14 @@ def generate_pdf(request, class_id, quiz_id):
     #    buffer.seek(0)
     #    return HttpResponse(buffer, content_type='application/pdf')
     return render(request, 'dashboard/idk.html')
+
+
+
+@login_required
+def profile_view(request):
+    user = request.user
+    return render(request, 'profile.html', {
+        'username': user.username,
+        'email': user.email,
+        'google_picture': getattr(user, 'google_picture_url', None),
+    })

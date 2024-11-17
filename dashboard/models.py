@@ -39,3 +39,13 @@ class QuizTry(models.Model):
     )
     timestamp = models.DateTimeField()
     answers = models.JSONField()
+
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+class CustomUser(AbstractUser):
+    google_picture_url = models.URLField(null=True, blank=True)
+    google_id = models.CharField(max_length=255, unique=True, null=True, blank=True)
+
+    def __str__(self):
+        return self.username
