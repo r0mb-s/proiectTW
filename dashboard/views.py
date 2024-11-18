@@ -29,7 +29,7 @@ def landingpage(request):
     return render(request, 'dashboard/landingpage.html')
 
 def dashboard(request):
-    if not request.user.is_authenticated:
+    if request.user.is_authenticated:
         # Redirect to login page if the user is not authenticated
         return redirect('http://127.0.0.1:8000/auth/login/google-oauth2/')  # Replace 'login' with the correct name of your login URL
 
@@ -45,17 +45,20 @@ def create_class(request):
             return redirect('dashboard')
     else:
         form = QuizClassForm()
+        classes = QuizClass.objects.all()
 
-    return render(request, 'dashboard/create_class.html', {'form': form})
+    return render(request, 'dashboard/create_class.html', {'form': form, 'classes': classes})
 
 def class_detail(request, class_id):
     class_obj: QuizClass = get_object_or_404(QuizClass, id=class_id)
     students = class_obj.students.all()
     quizes = class_obj.quizes.all()
-    return render(request, 'dashboard/class_detail.html', {'class': class_obj, 'students': students, 'quizes': quizes})
+    classes = QuizClass.objects.all()
+    return render(request, 'dashboard/class_detail.html', {'class': class_obj, 'students': students, 'quizes': quizes, 'classes': classes})
 
 def add_student(request, class_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
+    classes = QuizClass.objects.all()
     if request.method == 'POST':
         form = StudentForm(request.POST)
         if form.is_valid():
@@ -66,10 +69,11 @@ def add_student(request, class_id):
     else:
         form = StudentForm()
 
-    return render(request, 'dashboard/add_student.html', {'form': form, 'class': class_obj})
+    return render(request, 'dashboard/add_student.html', {'form': form, 'class': class_obj, 'classes': classes})
 
 def create_quiz(request, class_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
+    classes = QuizClass.objects.all()
     if request.method == 'POST':
         form = QuizForm(request.POST)
         if form.is_valid():
@@ -80,12 +84,13 @@ def create_quiz(request, class_id):
     else:
         form = QuizForm()
 
-    return render(request, 'dashboard/create_quiz.html', {'form': form, 'class': class_obj})
+    return render(request, 'dashboard/create_quiz.html', {'form': form, 'class': class_obj, 'classes': classes})
 
 def quiz_detail(request, class_id, quiz_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
     quiz_obj = get_object_or_404(Quiz, id=quiz_id)
-    return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj})
+    classes = QuizClass.objects.all()
+    return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj, 'classes': classes})
 
 def generate_pdf(request, class_id, quiz_id):
     #    buffer = BytesIO()

@@ -6,7 +6,9 @@
       <title>Landing Page</title>
       {% load static %}
       <link rel="stylesheet" href="{% static 'dashboard/landingpage.css' %}" />
+      <link rel="stylesheet" href="{% static 'dashboard/lightmodebutton.css' %}">
       <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+      <script src="{% static 'script/generalbuttons.js' %}" defer></script>
       <script src="{% static 'script/landingpage.js' %}"></script>
 
 </head>
@@ -27,7 +29,7 @@
       <div class="content-wrapper bordered">
             <div class="form-wrapper bordered">
                   <div class="login-signin-form bordered">
-                        <div class="login-form hide">
+                        <div class="login-form">
                               <span class="form-title"> Login </span>
                               <table>
                                     <tr>
@@ -59,7 +61,7 @@
                                     </div>
                               </div>
                         </div>
-                        <div class="signin-form">
+                        <div class="signin-form hide">
                               <span class="form-title"> Sign up </span>
                               <table>
                                     <tr>
