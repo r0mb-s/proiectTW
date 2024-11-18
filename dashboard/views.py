@@ -25,6 +25,9 @@ def google_classroom_classes(request):
     classes = get_teacher_classes(service)
     return render(request, 'classroom_classes.html', {'classes': classes})
 
+def landingpage(request):
+    return render(request, 'dashboard/landingpage.html')
+
 def dashboard(request):
     if not request.user.is_authenticated:
         # Redirect to login page if the user is not authenticated

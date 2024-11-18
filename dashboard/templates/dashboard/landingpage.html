@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Landing Page</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'dashboard/landingpage.css' %}" />
+      <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+      <script src="{% static 'script/landingpage.js' %}"></script>
+
+</head>
+<body>
+      <div class="upper-section bordered">
+            <div class="logo-wrapper bordered">
+                  <img src="{% static 'media/Logo.jpg' %}" alt="None" class="logo-picture">
+                  <span class="logo-text"> Gradly</span>           
+            </div>
+
+            <div class="moto-wrapper bordered">
+                  <input type="checkbox" id="darkmode-toggle" class="mode-check">
+                  <label for="darkmode-toggle" class="mode-toggle"></label>
+                  <span class="moto-text">Easiest way to take tests</span>
+            </div>
+      </div>
+
+      <div class="content-wrapper bordered">
+            <div class="form-wrapper bordered">
+                  <div class="login-signin-form bordered">
+                        <div class="login-form hide">
+                              <span class="form-title"> Login </span>
+                              <table>
+                                    <tr>
+                                          <td>
+                                                <input type="text" class="form-input" placeholder="Username" required> 
+                                          </td>
+                                    </tr>
+                                    <tr>
+                                          <td><input type="password" class="form-input" placeholder="Password" required></td>
+                                    </tr>
+                                    <tr>
+                                          <td>
+                                                <button class="form-button"> Login</button>
+                                          </td>
+                                    </tr>      
+                              </table>
+                              <div class="form-footer bordered">
+                                    <div class="divider"></div>
+                                    <div class="alternative-login-wrapper">
+                                          <span> Or login with: </span>
+                                          <div class="alternative-login-pictures">
+                                                <div class="alternative-picture-wrapper">
+                                                <img src="{% static 'media/Google_logo.svg.webp' %}" alt="none">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="alternative-create">
+                                          <span>Create an account</span>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="signin-form">
+                              <span class="form-title"> Sign up </span>
+                              <table>
+                                    <tr>
+                                          <td>
+                                                <input type="text" class="form-input" placeholder="Email" required> 
+                                          </td>
+                                    </tr>
+                                    <tr>
+                                          <td>
+                                                <input type="password" class="form-input" placeholder="Password" required> 
+                                          </td>
+                                    </tr>
+                                    <tr>
+                                          <td><input type="password" class="form-input" placeholder="Confirm-password" required></td>
+                                    </tr>
+                                    <tr>
+                                          <td>
+                                                <button class="form-button"> Sign up </button>
+                                          </td>
+                                    </tr>      
+                              </table>
+                              <div class="form-footer bordered">
+                                    <div class="divider"></div>
+                                    <div class="alternative-login-wrapper">
+                                          <span> Or sign up with: </span>
+                                          <div class="alternative-login-pictures">
+                                                <div class="alternative-picture-wrapper">
+                                                <img src="{% static 'media/Google_logo.svg.webp' %}" alt="none">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="alternative-create">
+                                          <span>I have an account</span>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <div class="picture-wrapper">
+                  <img src="{% static 'media/Classroom.jpg' %}" alt="None" class="classroom-picture">
+            </div>
+      </div>
+</body>
+</html>
