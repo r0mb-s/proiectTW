@@ -4,3 +4,4 @@ addclass.addEventListener('click', () =>{
       const url = addclass.getAttribute('data-url');
       window.location.href = url;
 });
+

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
       // Select the checkbox that toggles dark mode
       const modeCheck = document.querySelector('.mode-check');
-        if (localStorage.getItem('lightMode')){
+        if (localStorage.getItem('lightMode') === 'true'){
             modeCheck.checked = localStorage.getItem('lightMode');
         }else{
             localStorage.setItem('lightMode', modeCheck.checked);
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Function to toggle dark mode
       function toggleDarkMode() {
           if (modeCheck.checked) {
+            localStorage.setItem('lightMode', modeCheck.checked);
               document.documentElement.style.setProperty('--background-color', '#242424');
               document.documentElement.style.setProperty('--light-titles-color', '#ffcc89');
               document.documentElement.style.setProperty('--subtitle-color', '#ffffff');
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
               });
           } else {
               // Revert to light mode styles
+              localStorage.setItem('lightMode', modeCheck.checked);
               document.documentElement.style.setProperty('--background-color', '#ffffff');
               document.documentElement.style.setProperty('--light-titles-color', 'rgb(225, 0, 0)');
               document.documentElement.style.setProperty('--subtitle-color', '#242424');
@@ -48,5 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // Initialize dark mode based on the checkbox state
       toggleDarkMode();
+
+      const googleButton = document.getElementsByClassName('alternative-picture-wrapper')[0];
+        console.log(googleButton);
+        googleButton.addEventListener('click', () =>{
+      const url = googleButton.getAttribute('data-url');
+      window.location.href = url;
+        });
   });
   

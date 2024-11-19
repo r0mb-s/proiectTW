@@ -29,7 +29,7 @@ def landingpage(request):
     return render(request, 'dashboard/landingpage.html')
 
 def dashboard(request):
-    if request.user.is_authenticated:
+    if not request.user.is_authenticated:
         # Redirect to login page if the user is not authenticated
         return redirect('http://127.0.0.1:8000/auth/login/google-oauth2/')  # Replace 'login' with the correct name of your login URL
 

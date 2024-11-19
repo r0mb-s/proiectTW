@@ -8,8 +8,7 @@
       <link rel="stylesheet" href="{% static 'dashboard/landingpage.css' %}" />
       <link rel="stylesheet" href="{% static 'dashboard/lightmodebutton.css' %}">
       <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-      <script src="{% static 'script/generalbuttons.js' %}" defer></script>
-      <script src="{% static 'script/landingpage.js' %}"></script>
+      <script src="{% static 'script/landingpage.js' %}" defer></script>
 
 </head>
 <body>
@@ -51,7 +50,7 @@
                                     <div class="alternative-login-wrapper">
                                           <span> Or login with: </span>
                                           <div class="alternative-login-pictures">
-                                                <div class="alternative-picture-wrapper">
+                                                <div class="alternative-picture-wrapper" data-url="{% url 'dashboard' %}">
                                                 <img src="{% static 'media/Google_logo.svg.webp' %}" alt="none">
                                                 </div>
                                           </div>

@@ -132,7 +132,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/'  # Redirect to the home page (adjust as needed)
+LOGIN_REDIRECT_URL = 'dashboard/'  # Redirect to the home page (adjust as needed)
 LOGIN_URL = 'http://127.0.0.1:8000/auth/login/google-oauth2/'
 SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://127.0.0.1:8000/auth/complete/google-oauth2/'
 
