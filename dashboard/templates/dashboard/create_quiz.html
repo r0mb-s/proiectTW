@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Add Student</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'create_quiz.css' %}" />
-        <link rel="stylesheet" href="{% static 'dashboard/create_class.css' %}" />
         <link rel="stylesheet" href="{% static 'dashboard/menu.css' %}">
         <link rel="stylesheet" href="{% static 'dashboard/lightmodebutton.css' %}">
-        <link rel="stylesheet" href="{% static 'dashboard/formular.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'dashboard/formular.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'dashboard/create_quiz.css' %}" />
+        <script src="https://kit.fontawesome.com/cda358d5a3.js" crossorigin="anonymous"></script>
         <script src="{% static 'script/switchlight.js' %}" defer></script>
         <script src="{% static 'script/generalbuttons.js' %}" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         <div class="upper-section">
             <div class="upper-section-left">
                 <a href="{% url 'dashboard' %}" class="logo-button">
-                    <img src="{% static 'media/Logo.jpg' %}" alt="None" class="logo-picture">
+                    <img src="{% static 'media/Logo.png' %}" alt="None" class="logo-picture">
                     <span class="logo-text"> Gradly </span>
                 </a>
             </div>
@@ -49,11 +49,47 @@
             <div class="divider"></div>
         </div>
         <div class="content-wrapper">
+            <h2>Add Quiz to {{ class.name }}</h2>
             <div class="form-container">
-                <h2>Add Quiz to {{ class.name }}</h2>
                 <form method="POST" class="formular">
-                    {% csrf_token %} {{ form.as_p }}
+                    {% csrf_token %}
+                    <div class="formular-name-area">
+                        <label for="name">Nume:</label>
+                        <input type="text">
+                    </div>
+                    <div class="formular-addquestion-area">
+                        <p>Questions</p>
+                        <div class="add-question-wrapper" id="addQuestionButton">
+                        <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-362.000000, -1037.000000)" fill="#000000"> <path d="M390,1049 L382,1049 L382,1041 C382,1038.79 380.209,1037 378,1037 C375.791,1037 374,1038.79 374,1041 L374,1049 L366,1049 C363.791,1049 362,1050.79 362,1053 C362,1055.21 363.791,1057 366,1057 L374,1057 L374,1065 C374,1067.21 375.791,1069 378,1069 C380.209,1069 382,1067.21 382,1065 L382,1057 L390,1057 C392.209,1057 394,1055.21 394,1053 C394,1050.79 392.209,1049 390,1049" id="plus" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                        </div>
+                    </div>
+
+                    <div class="divider" style="width: 100%; margin: 0;"></div>
+                    <div class="formular-questions-area" id="questionContainer">
+                        <template id="questionTemplate">
+                        <div class="question-dropdown">
+                            <input type="text" class="question-input" placeholder="Scrie intrebarea">
+                            <input type="checkbox" class="question-dropdown-button">
+                            <i class="fa-solid fa-caret-down" id="butondropdown"></i>
+                        </div>
+                        <div class="question-dropdown-content dropdown-content">
+                            <div class="question-answer"> 
+                                <input type="text" class="answer" placeholder="Raspuns">
+                                <div class="question-answer-check">
+                                <label for="corect"> Corect : </label>
+                                <input type="checkbox" name="corect">
+                                </div>
+                            </div>
+                            <div class="question-answer-add">
+                                <p> Adauga un raspuns </p>
+                            </div>
+                        </div>
+                        </template>
+                    </div>
+                    
+                    <div class="formular-button-area">
                     <button type="submit">Add Quiz</button>
+                    </div>
                 </form>
             </div>
         </div>

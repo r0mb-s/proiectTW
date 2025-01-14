@@ -71,18 +71,20 @@ def dashboard(request):
         return redirect('http://127.0.0.1:8000/auth/login/google-oauth2/')  # Replace 'login' with the correct name of your login URL
 
     # If authenticated, proceed with the normal flow
-    classes = QuizClass.objects.all()
+    classes = QuizClass.objects.filter(account_mail = request.user.email)
     return render(request, 'dashboard/dashboard.html', {'classes': classes})
 
 def create_class(request):
     if request.method == 'POST':
         form = QuizClassForm(request.POST)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.account_mail = request.user.email;
+            instance.save()
             return redirect('dashboard')
     else:
         form = QuizClassForm()
-        classes = QuizClass.objects.all()
+        classes = QuizClass.objects.filter(account_mail = request.user.email)
 
     return render(request, 'dashboard/create_class.html', {'form': form, 'classes': classes})
 
@@ -90,12 +92,12 @@ def class_detail(request, class_id):
     class_obj: QuizClass = get_object_or_404(QuizClass, id=class_id)
     students = class_obj.students.all()
     quizes = class_obj.quizes.all()
-    classes = QuizClass.objects.all()
+    classes = QuizClass.objects.filter(account_mail = request.user.email)
     return render(request, 'dashboard/class_detail.html', {'class': class_obj, 'students': students, 'quizes': quizes, 'classes': classes})
 
 def add_student(request, class_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
-    classes = QuizClass.objects.all()
+    classes = QuizClass.objects.filter(account_mail = request.user.email)
     if request.method == 'POST':
         form = StudentForm(request.POST)
         if form.is_valid():
@@ -110,7 +112,7 @@ def add_student(request, class_id):
 
 def create_quiz(request, class_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
-    classes = QuizClass.objects.all()
+    classes = QuizClass.objects.filter(account_mail = request.user.email)
     if request.method == 'POST':
         form = QuizForm(request.POST)
         if form.is_valid():
@@ -126,7 +128,7 @@ def create_quiz(request, class_id):
 def quiz_detail(request, class_id, quiz_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
     quiz_obj = get_object_or_404(Quiz, id=quiz_id)
-    classes = QuizClass.objects.all()
+    classes = QuizClass.objects.filter(account_mail = request.user.email)
     return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj, 'classes': classes})
 
 def generate_pdf(request, class_id, quiz_id):
