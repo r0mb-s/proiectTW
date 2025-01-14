@@ -14,7 +14,7 @@
 <body>
       <div class="upper-section bordered">
             <div class="logo-wrapper bordered">
-                  <img src="{% static 'media/Logo.jpg' %}" alt="None" class="logo-picture">
+                  <img src="{% static 'media/Logo.png' %}" alt="None" class="logo-picture">
                   <span class="logo-text"> Gradly</span>           
             </div>
 
@@ -28,20 +28,23 @@
       <div class="content-wrapper bordered">
             <div class="form-wrapper bordered">
                   <div class="login-signin-form bordered">
+                        <form id="login-form" method="POST" action="{% url 'landingpage' %}" class="formular">
+                        {% csrf_token %}
                         <div class="login-form">
+                              <input type="hidden" name="form_type" value="login">
                               <span class="form-title"> Login </span>
                               <table>
                                     <tr>
                                           <td>
-                                                <input type="text" class="form-input" placeholder="Username" required> 
+                                                <input type="text" id="email1" name="email1" class="form-input" placeholder="Email" required> 
                                           </td>
                                     </tr>
                                     <tr>
-                                          <td><input type="password" class="form-input" placeholder="Password" required></td>
+                                          <td><input type="password" id="password1" name="password1" class="form-input" placeholder="Password" required></td>
                                     </tr>
                                     <tr>
                                           <td>
-                                                <button class="form-button"> Login</button>
+                                                <button type="submit" class="form-button"> Login</button>
                                           </td>
                                     </tr>      
                               </table>
@@ -51,7 +54,7 @@
                                           <span> Or login with: </span>
                                           <div class="alternative-login-pictures">
                                                 <div class="alternative-picture-wrapper" data-url="{% url 'dashboard' %}">
-                                                <img src="{% static 'media/Google_logo.svg.webp' %}" alt="none">
+                                                <img src="{% static 'media/Google.png' %}" alt="none">
                                                 </div>
                                           </div>
                                     </div>
@@ -60,25 +63,29 @@
                                     </div>
                               </div>
                         </div>
+                        </form>
+                        <form id="signin-form" method="POST" action="{% url 'landingpage' %}" class="formular">
+                        {% csrf_token %}
                         <div class="signin-form hide">
+                              <input type="hidden" name="form_type" value="signin">
                               <span class="form-title"> Sign up </span>
                               <table>
                                     <tr>
                                           <td>
-                                                <input type="text" class="form-input" placeholder="Email" required> 
+                                                <input type="text" id="email2" name="email2" class="form-input" placeholder="Email" required> 
                                           </td>
                                     </tr>
                                     <tr>
                                           <td>
-                                                <input type="password" class="form-input" placeholder="Password" required> 
+                                                <input type="password" id="password2" name="password2" class="form-input" placeholder="Password" required> 
                                           </td>
                                     </tr>
                                     <tr>
-                                          <td><input type="password" class="form-input" placeholder="Confirm-password" required></td>
+                                          <td><input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Confirm-password" required></td>
                                     </tr>
                                     <tr>
                                           <td>
-                                                <button class="form-button"> Sign up </button>
+                                                <button type="submit" class="form-button"> Sign up </button>
                                           </td>
                                     </tr>      
                               </table>
@@ -88,7 +95,7 @@
                                           <span> Or sign up with: </span>
                                           <div class="alternative-login-pictures">
                                                 <div class="alternative-picture-wrapper">
-                                                <img src="{% static 'media/Google_logo.svg.webp' %}" alt="none">
+                                                <img src="{% static 'media/Google.png' %}" alt="none">
                                                 </div>
                                           </div>
                                     </div>
@@ -97,6 +104,7 @@
                                     </div>
                               </div>
                         </div>
+                        </form>
                   </div>
             </div>
 

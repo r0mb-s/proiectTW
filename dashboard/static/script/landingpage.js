@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (modeCheck.checked) {
             localStorage.setItem('lightMode', modeCheck.checked);
               document.documentElement.style.setProperty('--background-color', '#242424');
-              document.documentElement.style.setProperty('--light-titles-color', '#ffcc89');
+              document.documentElement.style.setProperty('--light-titles-color', 'rgb(253, 179, 2)');
               document.documentElement.style.setProperty('--subtitle-color', '#ffffff');
               document.documentElement.style.setProperty('--form-shadow', '3px 0px 30px rgba(255, 255, 255, 0.7)'); // light color for text in dark mode
               document.body.style.backgroundColor = '#242424';
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
                   input.style.borderColor = '#555';
               });
               document.querySelectorAll('.form-button').forEach(button => {
-                  button.style.backgroundColor = '#555';
-                  button.style.color = '#fff';
+                  button.style.backgroundColor = 'rgb(253, 179, 2)';
+                  button.style.color = '#242424';
               });
           } else {
               // Revert to light mode styles
@@ -50,6 +50,20 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // Initialize dark mode based on the checkbox state
       toggleDarkMode();
+
+      function switchForms(){
+        if (document.getElementsByClassName('signin-form')[0].classList.contains('hide')){
+            document.getElementsByClassName('signin-form')[0].classList.remove('hide')
+            document.getElementsByClassName('login-form')[0].classList.add('hide')
+        } else {
+            document.getElementsByClassName('signin-form')[0].classList.add('hide')
+            document.getElementsByClassName('login-form')[0].classList.remove('hide')
+        }
+        console.log("click")
+      }
+
+      document.querySelectorAll('.alternative-create span')[0].addEventListener('click', switchForms);
+      document.querySelectorAll('.alternative-create span')[1].addEventListener('click', switchForms);
 
       const googleButton = document.getElementsByClassName('alternative-picture-wrapper')[0];
         console.log(googleButton);

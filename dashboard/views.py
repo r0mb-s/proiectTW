@@ -5,7 +5,9 @@ from django.http import HttpResponse
 from io import BytesIO
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
-from django.contrib.auth import logout
+from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.models import User
+from django.contrib import messages
 
 # from reportlab.pdfgen import canvas
 
@@ -26,6 +28,41 @@ def google_classroom_classes(request):
     return render(request, 'classroom_classes.html', {'classes': classes})
 
 def landingpage(request):
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        
+        if form_type == 'login' :
+            email = request.POST.get('email1')
+            password = request.POST.get('password1')
+            
+            user = authenticate(request, username=email, password=password)
+            if user is not None :
+                login(request, user)
+                return redirect('dashboard')
+            else : 
+                messages.error(request, 'Invalid login credentials')
+                return render(request, 'dashboard/landingpage.html')
+        
+        elif form_type == "signin" :
+            email = request.POST.get('email2')
+            password = request.POST.get('password2')
+            confirm_password = request.POST.get('confirmPassword')
+            
+            if password != confirm_password :
+                messages.error(request, 'Password and confirm password are different')
+            elif User.objects.filter(username=email).exists():
+                messages.error(request, 'Username already taken')
+            elif User.objects.filter(email=email).exists():
+                messages.error(request, 'Email already registered')
+            else:
+                # Create new user
+                User.objects.create_user(username=email, email=email, password=password)
+                messages.success(request, 'Account created successfully! You can now log in.')
+                return redirect('landingpage')
+            
+            return render(request, 'dashboard/landingpage.html')
+            
+                    
     return render(request, 'dashboard/landingpage.html')
 
 def dashboard(request):
