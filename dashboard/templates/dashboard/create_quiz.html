@@ -51,11 +51,11 @@
         <div class="content-wrapper">
             <h2>Add Quiz to {{ class.name }}</h2>
             <div class="form-container">
-                <form method="POST" class="formular">
+                <form method="POST" class="formular" action="{% url 'create_quiz' class_id=1 %}">
                     {% csrf_token %}
                     <div class="formular-name-area">
                         <label for="name">Nume:</label>
-                        <input type="text">
+                        <input type="text" name="quiz_name">
                     </div>
                     <div class="formular-addquestion-area">
                         <p>Questions</p>
@@ -69,7 +69,7 @@
                         <template id="questionTemplate">
                         <div class="question-wrapper">
                             <div class="question-dropdown">
-                                <input type="text" class="question-input" placeholder="Scrie intrebarea">
+                                <input type="text" class="question-input" placeholder="Scrie intrebarea" name="questions[]">
                                 <div class="question-dropdown-action-buttons">
                                     <i class="fa-solid fa-caret-down" id="butondropdown"></i>
                                     <i class="fa-regular fa-trash-can" id="questionDeleteButton"></i>
@@ -85,11 +85,11 @@
                     </div>
                     <template id="answerTemplate">
                         <div class="question-answer"> 
-                            <input type="text" class="answer" placeholder="Raspuns">
+                            <input type="text" class="answer" placeholder="Raspuns" name="answers[]">
                             <div class="question-answer-check">
                                 <div class="question-answer-check-wrapper">
                                     <label for="corect"> Corect : </label>
-                                    <input type="checkbox" name="corect">
+                                    <input type="checkbox" name="correct_answers[]">
                                 </div>
                                 <div class="question-answer-delete">
                                     <i class="fa-regular fa-trash-can"></i>

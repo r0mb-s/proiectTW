@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import QuizClass, Quiz
 from .forms import QuizClassForm, QuizForm, StudentForm
@@ -114,6 +115,22 @@ def create_quiz(request, class_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
     classes = QuizClass.objects.filter(account_mail = request.user.email)
     if request.method == 'POST':
+        quiz_name = request.POST.get('quiz_name')
+        quiz_questions = request.POST.getlist('questions[]')
+        print(quiz_name)
+        print(quiz_questions)
+
+        answer = {}
+        correct_answer = {}
+        for index, question in enumerate(quiz_questions):
+            answer_key = f'answer_{index}[]'
+            correct_key = f'correct_answer_{index}[]'
+            answer[index] = request.POST.getlist(answer_key)
+            correct_answer[index] = request.POST.getlist(correct_key)
+
+        print(answer)
+        print(correct_answer)
+
         form = QuizForm(request.POST)
         if form.is_valid():
             student = form.save(commit=False)
