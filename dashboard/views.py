@@ -9,6 +9,9 @@ from django.shortcuts import redirect
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.files.storage import default_storage
 
 import subprocess
 # from reportlab.pdfgen import canvas
@@ -246,4 +249,13 @@ def grade(request, class_id):
     return render(request, 'dashboard/grade.html',{'class': class_obj, 'students': students})
 
 def takegrade(request):
-    number = 1;
+    if request.method == "POST":
+        uploaded_files = request.FILES.getlist("photos[]")
+        saved_files = []
+
+        for file in uploaded_files:
+            file_name = default_storage.save(f"uploads/{file.name}", file)
+            saved_files.append(file_name)
+
+        return JsonResponse({"message": "Files uploaded successfully", "files": saved_files})
+    return JsonResponse({"error": "Invalid request"}, status=400)

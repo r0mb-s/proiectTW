@@ -55,7 +55,8 @@ body{
       position: relative;
       margin-left: 15vw;
       display: flex;
-      padding-bottom: 8vh;
+      padding-top: 8vh;
+      justify-content: center;
 }
 
 .logo-button{
