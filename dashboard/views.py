@@ -10,6 +10,7 @@ from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
 
+import subprocess
 # from reportlab.pdfgen import canvas
 
 from googleapiclient.discovery import build
@@ -111,32 +112,69 @@ def add_student(request, class_id):
 
     return render(request, 'dashboard/add_student.html', {'form': form, 'class': class_obj, 'classes': classes})
 
+def pdf_maker(questions, quiz_name, class_id):
+    filename = "./amc-text/" + quiz_name + str(class_id) + ".tx"
+
+    try:
+        with open(filename, "w") as file:
+            file.write("# AMC-TXT source file\n")
+            file.write("Title: " + quiz_name + "\n\n")
+            file.write("Presentation: Răspundeți la întrebările cu răspuns multiplu.\n")
+            
+            for question in questions:
+
+                file.write("\n* " + question + "\n")
+                for answer in questions[question]:
+                    if questions[question][answer] == 0:
+                        file.write("- " + answer + "\n")
+                    else:
+                        file.write("+ " + answer + "\n")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+    print(subprocess.run(["pwd"]))
+    result = subprocess.run(["amc-helper/create.sh", "./amc-helper/" + quiz_name + str(class_id) + "/", "./amc-text/" + quiz_name + str(class_id) + ".tx"], capture_output=True, text=True)
+    print(result.stdout)
+
 def create_quiz(request, class_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
     classes = QuizClass.objects.filter(account_mail = request.user.email)
     if request.method == 'POST':
-        quiz_name = request.POST.get('quiz_name')
-        quiz_questions = request.POST.getlist('questions[]')
-        print(quiz_name)
-        print(quiz_questions)
+        post = request.POST
+        quiz_name = ""
+        questions = dict()
+        question_number = -1
+        question_text = ""
+        for key in post:
+            if key == "quiz_name":
+                quiz_name = post[key]
+            elif key.startswith("question"):
+                question_number += 1
+                questions[post[key]] = dict()
+                question_text = post[key]
+            elif key.startswith("answer_" + str(question_number)):
+                if key.endswith("+"):
+                    questions[question_text][post[key]] = 1;
+                else:
+                    questions[question_text][post[key]] = 0;
 
-        answer = {}
-        correct_answer = {}
-        for index, question in enumerate(quiz_questions):
-            answer_key = f'answer_{index}[]'
-            correct_key = f'correct_answer_{index}[]'
-            answer[index] = request.POST.getlist(answer_key)
-            correct_answer[index] = request.POST.getlist(correct_key)
+        pdf_maker(questions, quiz_name, class_id)
 
-        print(answer)
-        print(correct_answer)
+        #form = QuizForm(request.POST)
+        #if form.is_valid():
+         #   student = form.save(commit=False)
+          #  student.class_name = class_obj
+           # student.save()
 
-        form = QuizForm(request.POST)
-        if form.is_valid():
-            student = form.save(commit=False)
-            student.class_name = class_obj
-            student.save()
-            return redirect('class_detail', class_id=class_id)
+        form = QuizForm()
+        idk = form.save(commit=False)
+        idk.name = quiz_name
+        idk.class_name = class_obj
+        idk.number_of_questions = len(questions)
+        idk.questions = questions
+        idk.save()
+        return redirect('class_detail', class_id=class_id)
     else:
         form = QuizForm()
 
