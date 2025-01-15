@@ -8,6 +8,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'dashboard/menu.css' %}">
     <link rel="stylesheet" href="{% static 'dashboard/lightmodebutton.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/dashboard.css' %}">
     <script src="{% static 'script/switchlight.js' %}" defer></script>
     <script src="{% static 'script/generalbuttons.js' %}" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
@@ -48,8 +49,22 @@
         </div>
         <div class="divider"></div>
     </div>
-    <div class="content-wrapper"></div>
 
+    <div class="content-wrapper">
+        <ul class="unordered-list">
+        {% for class in classes %}
+            <div class="content-square">
+                <a href="{% url 'class_detail' class_id=class.id %}" class="square-button">
+                    {{ class.name }}
+                </a>
+            </div>
+        {% empty %}
+            <div class="content-square">
+                <p>No classes available.</p>
+            </div>
+        {% endfor %}
+        </ul>
+    </div>
     <!-- <div class="dashboard">
         <div class="account-section">
             <h2>Account</h2>
@@ -72,5 +87,40 @@
         </div>
     </div> -->
 </body>
+<script>
+    // Function to generate random colors
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Function to calculate the brightness of a color (for contrast)
+    function getColorBrightness(color) {
+        const rgb = parseInt(color.slice(1), 16); // Convert hex to RGB
+        const r = (rgb >> 16) & 0xff;
+        const g = (rgb >>  8) & 0xff;
+        const b = (rgb >>  0) & 0xff;
+        // Using the luminance formula to find brightness
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    }
+
+    // Apply random colors and adjust text color for contrast
+    document.addEventListener('DOMContentLoaded', function() {
+        const squares = document.querySelectorAll('.content-square');
+        squares.forEach(function(square) {
+            const bgColor = getRandomColor();
+            square.style.backgroundColor = bgColor;
+
+            // Check brightness to decide text color
+            const brightness = getColorBrightness(bgColor);
+            const textColor = brightness < 128 ? 'white' : 'black';
+            square.querySelector('.square-button').style.color = textColor;
+        });
+    });
+</script>
 
 </html>
