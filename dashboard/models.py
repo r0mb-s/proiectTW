@@ -1,4 +1,5 @@
 from django.db import models
+from google.auth import default
 
 
 class QuizClass(models.Model):
@@ -29,7 +30,7 @@ class Quiz(models.Model):
     name = models.CharField(max_length=100)
     number_of_questions = models.IntegerField()
     questions = models.JSONField()
-    answers = models.JSONField()
+    answers = models.JSONField(default=dict)
 
 
 class QuizTry(models.Model):
