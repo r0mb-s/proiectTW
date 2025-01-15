@@ -5,7 +5,7 @@ class QuizClass(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    account_mail = models.EmailField(unique=True, null=True)
+    account_mail = models.EmailField(unique=False, null=True)
     def __str__(self):
         return str(self.name)
 

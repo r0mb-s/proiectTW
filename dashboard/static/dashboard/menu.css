@@ -54,9 +54,7 @@ body{
       flex: 1 1 auto;
       position: relative;
       margin-left: 15vw;
-      padding-top: 8vh;
       display: flex;
-      justify-content: center;
       padding-bottom: 8vh;
 }
 
