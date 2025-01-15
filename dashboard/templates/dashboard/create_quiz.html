@@ -67,25 +67,37 @@
                     <div class="divider" style="width: 100%; margin: 0;"></div>
                     <div class="formular-questions-area" id="questionContainer">
                         <template id="questionTemplate">
-                        <div class="question-dropdown">
-                            <input type="text" class="question-input" placeholder="Scrie intrebarea">
-                            <input type="checkbox" class="question-dropdown-button">
-                            <i class="fa-solid fa-caret-down" id="butondropdown"></i>
-                        </div>
-                        <div class="question-dropdown-content dropdown-content">
-                            <div class="question-answer"> 
-                                <input type="text" class="answer" placeholder="Raspuns">
-                                <div class="question-answer-check">
-                                <label for="corect"> Corect : </label>
-                                <input type="checkbox" name="corect">
+                        <div class="question-wrapper">
+                            <div class="question-dropdown">
+                                <input type="text" class="question-input" placeholder="Scrie intrebarea">
+                                <div class="question-dropdown-action-buttons">
+                                    <i class="fa-solid fa-caret-down" id="butondropdown"></i>
+                                    <i class="fa-regular fa-trash-can" id="questionDeleteButton"></i>
                                 </div>
                             </div>
-                            <div class="question-answer-add">
-                                <p> Adauga un raspuns </p>
+                            <div class="question-dropdown-content dropdown-content">
+                                <div class="question-answer-add">
+                                    <p> Adauga un raspuns </p>
+                                </div>
                             </div>
                         </div>
                         </template>
                     </div>
+                    <template id="answerTemplate">
+                        <div class="question-answer"> 
+                            <input type="text" class="answer" placeholder="Raspuns">
+                            <div class="question-answer-check">
+                                <div class="question-answer-check-wrapper">
+                                    <label for="corect"> Corect : </label>
+                                    <input type="checkbox" name="corect">
+                                </div>
+                                <div class="question-answer-delete">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </template>
                     
                     <div class="formular-button-area">
                     <button type="submit">Add Quiz</button>

@@ -102,7 +102,6 @@
       height: 2rem;
       border-radius: 5px;
       width: 50%;
-      
 }
 
 .question-dropdown-button{
@@ -149,14 +148,25 @@
 
 .question-answer-check{
       display: flex;
-      width: 15%;
+      width: 20%;
       align-items: center;
+      gap: 2rem;
 }
 
 .question-answer-check input{
       width: 1.3rem;
       height: 1.3rem;
-      margin-left: 2rem;
+      margin-left: 1rem;
+}
+
+.question-answer-check i{
+      font-size: 1.5rem;
+}
+
+.question-answer-check-wrapper{
+      display: flex;
+      justify-content: left;
+      align-items: center;
 }
 
 .question-answer-add{
@@ -178,6 +188,19 @@
       transition: ease-in 0.1s;
 }
 
+.question-wrapper{
+      width: 100%;
+      height: 100%;
+}
+
+.question-dropdown-action-buttons{
+      display: flex;
+      gap: 3rem;
+}
+
+.question-answer-delete:hover{
+      cursor: pointer;
+}
 
 
 
@@ -188,5 +211,5 @@
 }
 
 .dropdown-content.open {
-      max-height: 200px;      /* Set a height large enough to show content */
+      max-height: 100%;      /* Set a height large enough to show content */
 }

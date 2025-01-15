@@ -22,9 +22,43 @@ addQuestionButton.addEventListener('click', function() {
 
 document.addEventListener('click', function (e) {
       if (e.target.matches('#butondropdown')) {
-        const dropdownContent = e.target.parentElement.nextElementSibling;
+        const dropdownContent = e.target.parentElement.parentElement.nextElementSibling;
         dropdownContent.classList.toggle('open');
       }
     });
+
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.question-answer-add')) {
+          const questionDropdownContent = e.target.closest('.question-dropdown-content');
+          const answerTemplate = document.querySelector('#answerTemplate');
+          
+          if (questionDropdownContent && answerTemplate) {
+              // Clone the answer template content
+              const answerContent = answerTemplate.content.cloneNode(true);
+              
+              // Insert the answer content above the "Add Answer" button
+              const addAnswerButton = questionDropdownContent.querySelector('.question-answer-add');
+              questionDropdownContent.insertBefore(answerContent, addAnswerButton);
+          }
+      }
+  });
+
+  document.addEventListener('click', (e) =>{
+      if (e.target.closest('.question-answer-delete')){
+            const answer = e.target.closest('.question-answer');
+            if (answer){
+                  answer.remove();
+            }
+      }
+  });
+
+  document.addEventListener('click', (e) => {
+      if (e.target.matches('#questionDeleteButton')){
+            const question = e.target.closest('.question-wrapper');
+            if(question){
+                  question.remove();
+            }
+      }
+  });
     
 
