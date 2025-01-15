@@ -6,19 +6,18 @@
         <title>My test page</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'dashboard/quiz_detail.css' %}">
-        <link rel="stylesheet" href="{% static 'dashboard/create_class.css' %}" />
         <link rel="stylesheet" href="{% static 'dashboard/menu.css' %}">
         <link rel="stylesheet" href="{% static 'dashboard/lightmodebutton.css' %}">
         <link rel="stylesheet" href="{% static 'dashboard/formular.css' %}">
         <script src="{% static 'script/switchlight.js' %}" defer></script>
-        <script src="{% static 'script/generalbuttons.js' %}" defer></script>
+        <script src="{% static 'script/quizdetail.js' %}" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="upper-section">
             <div class="upper-section-left">
                 <a href="{% url 'dashboard' %}" class="logo-button">
-                    <img src="{% static 'media/Logo.jpg' %}" alt="None" class="logo-picture">
+                    <img src="{% static 'media/Logo.png' %}" alt="None" class="logo-picture">
                     <span class="logo-text"> Gradly </span>
                 </a>
             </div>
@@ -48,8 +47,18 @@
             </div>
             <div class="divider"></div>
         </div>
-        <div class="content-wrapper"></div>
-        <p>This is my quiz: {{ quiz.name }}</p>
-        <a href="{% url 'generate_pdf' class_id=class.id quiz_id=quiz.id %}">Create Quiz</a>
+        <div class="content-wrapper">
+            <div class="content-title-wrapper">
+                <div class="title-wrapper">
+                <h1> Quiz: {{ quiz.name }}</h1>
+                </div>
+                <div class="grade-wrapper">
+                    <button class="grade-button" data-url="{% url 'grade' class_id=class.id %}" id="gradeButton"> Grade paper</button>
+                </div>
+            </div>
+            <div class="pdf-wrapper">
+                <embed src="{% static 'DOC-subject.pdf' %}" type="application/pdf">
+            </div>
+        </div>
     </body>
 </html>

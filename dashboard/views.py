@@ -82,6 +82,8 @@ def create_class(request):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.account_mail = request.user.email;
+            print(instance.account_mail)
+            print(request.user.email)
             instance.save()
             return redirect('dashboard')
     else:
@@ -184,7 +186,9 @@ def quiz_detail(request, class_id, quiz_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
     quiz_obj = get_object_or_404(Quiz, id=quiz_id)
     classes = QuizClass.objects.filter(account_mail = request.user.email)
-    return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj, 'classes': classes})
+    pdf_path = "./amc-helper/test1/DOC-subject.pdf";
+    
+    return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj, 'classes': classes, 'pdf_path': pdf_path})
 
 def generate_pdf(request, class_id, quiz_id):
     #    buffer = BytesIO()
@@ -235,3 +239,11 @@ def profile_view(request):
 def custom_logout(request):
     logout(request)  # Django's built-in logout function
     return redirect('/')  # Redirect to home or any page you prefer
+
+def grade(request, class_id):
+    class_obj = get_object_or_404(QuizClass, id=class_id)
+    students = class_obj.students.all()
+    return render(request, 'dashboard/grade.html',{'class': class_obj, 'students': students})
+
+def takegrade(request):
+    number = 1;

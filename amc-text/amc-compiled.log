@@ -1,15 +1,15 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex 2025.1.13)  15 JAN 2025 22:31
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.1.13)  15 JAN 2025 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**sadasdas1_filtered.tex
-(./sadasdas1_filtered.tex
-LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-01-16>
+**ed4_filtered.tex
+(./ed4_filtered.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count181
 \c@section=\count182
@@ -19,9 +19,9 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count186
 \c@figure=\count187
 \c@table=\count188
-\abovecaptionskip=\skip48
-\belowcaptionskip=\skip49
-\bibindent=\dimen140
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
 )
 (/usr/share/texlive/texmf-dist/tex/xelatex/xltxtra/xltxtra.sty
 Package: xltxtra 2018/12/31 v0.7 Improvements for the "XeLaTeX" format
@@ -30,7 +30,7 @@ Package: xltxtra 2018/12/31 v0.7 Improvements for the "XeLaTeX" format
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
@@ -38,37 +38,42 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-01-16 L3 programming layer (loader) 
+Package: expl3 2022-01-21 L3 programming layer (loader) 
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
-\g__graphics_track_int=\count189
-\l__pdf_internal_box=\box51
-\g__pdf_backend_object_int=\count190
-\g__pdf_backend_annotation_int=\count191
-\g__pdf_backend_link_int=\count192
+File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
+
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count189
+\l__color_backend_stack_int=\count190
+\g__color_backend_stack_int=\count191
+\g__graphics_track_int=\count192
+\l__pdf_internal_box=\box50
+\g__pdf_backend_object_int=\count193
+\g__pdf_backend_annotation_int=\count194
+\g__pdf_backend_link_int=\count195
 ))
-Package: xparse 2023-01-16 L3 Experimental document command parser
+Package: xparse 2022-01-12 L3 Experimental document command parser
 )
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count193
-\l__fontspec_language_int=\count194
-\l__fontspec_strnum_int=\count195
-\l__fontspec_tmp_int=\count196
-\l__fontspec_tmpa_int=\count197
-\l__fontspec_tmpb_int=\count198
-\l__fontspec_tmpc_int=\count199
-\l__fontspec_em_int=\count266
-\l__fontspec_emdef_int=\count267
-\l__fontspec_strong_int=\count268
-\l__fontspec_strongdef_int=\count269
-\l__fontspec_tmpa_dim=\dimen141
-\l__fontspec_tmpb_dim=\dimen142
-\l__fontspec_tmpc_dim=\dimen143
+\l__fontspec_script_int=\count196
+\l__fontspec_language_int=\count197
+\l__fontspec_strnum_int=\count198
+\l__fontspec_tmp_int=\count199
+\l__fontspec_tmpa_int=\count266
+\l__fontspec_tmpb_int=\count267
+\l__fontspec_tmpc_int=\count268
+\l__fontspec_em_int=\count269
+\l__fontspec_emdef_int=\count270
+\l__fontspec_strong_int=\count271
+\l__fontspec_strongdef_int=\count272
+\l__fontspec_tmpa_dim=\dimen139
+\l__fontspec_tmpb_dim=\dimen140
+\l__fontspec_tmpc_dim=\dimen141
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
@@ -77,7 +82,7 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/realscripts/realscripts.sty
 Package: realscripts 2016/02/13 v0.3d Access OpenType subscripts and superscrip
 ts
-\subsupersep=\dimen144
+\subsupersep=\dimen142
 )
 (/usr/share/texlive/texmf-dist/tex/latex/metalogo/metalogo.sty
 Package: metalogo 2010/05/29 v0.12 Extended TeX logo macros
@@ -86,11 +91,11 @@ Package: metalogo 2010/05/29 v0.12 Extended TeX logo macros
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
@@ -101,10 +106,10 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: xetex.def on input line 107.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen145
-\Gin@req@width=\dimen146
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
 )
 \xl@everylogo=\toks17
 \xl@@everylogo=\toks18
@@ -112,78 +117,73 @@ LaTeX Info: Redefining \TeX on input line 193.
 LaTeX Info: Redefining \LaTeX on input line 202.
 LaTeX Info: Redefining \LaTeXe on input line 219.
 )
-\l__xetex_show_hyphens_wrapping_box=\box52
-\l__xetex_show_hyphens_temp_box=\box53
-\l__xetex_show_hyphens_final_box=\box54
-\g__xetex_show_hyphens_word_box=\box55
+\l__xetex_show_hyphens_wrapping_box=\box51
+\l__xetex_show_hyphens_temp_box=\box52
+\l__xetex_show_hyphens_final_box=\box53
+\g__xetex_show_hyphens_word_box=\box54
 )
 (/usr/share/texmf/tex/latex/AMC/automultiplechoice.sty
-AMC version: 2023/02/06 v1.6.0 r:47896cea
-Package: automultiplechoice 2023/02/06 v1.6.0 r:47896cea
+AMC version: 2024/11/25 v1.6.0+git20241125112225 r:7257c566
+Package: automultiplechoice 2024/11/25 v1.6.0+git20241125112225 r:7257c566
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 227.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
-
-\f@nch@headwidth=\skip50
-\f@nch@O@elh=\skip51
-\f@nch@O@erh=\skip52
-\f@nch@O@olh=\skip53
-\f@nch@O@orh=\skip54
-\f@nch@O@elf=\skip55
-\f@nch@O@erf=\skip56
-\f@nch@O@olf=\skip57
-\f@nch@O@orf=\skip58
-)
-(/usr/share/texlive/texmf-dist/tex/latex/bophook/bophook.sty
-Package: bophook 2001/03/29 v0.02 beginning-of-page hook, K. Tinnefeld
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip49
+\f@nch@O@elh=\skip50
+\f@nch@O@erh=\skip51
+\f@nch@O@olh=\skip52
+\f@nch@O@orh=\skip53
+\f@nch@O@elf=\skip54
+\f@nch@O@erf=\skip55
+\f@nch@O@olf=\skip56
+\f@nch@O@orf=\skip57
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks19
 \XKV@tempa@toks=\toks20
 )
-\XKV@depth=\count270
+\XKV@depth=\count273
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count271
-\rotFPtop=\skip59
-\rotFPbot=\skip60
-\rot@float@box=\box56
+\c@r@tfl@t=\count274
+\rotFPtop=\skip58
+\rotFPbot=\skip59
+\rot@float@box=\box55
 \rot@mess@toks=\toks21
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
-\@fancybox=\box57
-\shadowsize=\dimen147
-\@Sbox=\box58
+\@fancybox=\box56
+\shadowsize=\dimen145
+\@Sbox=\box57
 \do@VerbBox=\toks22
 \the@fancyput=\toks23
 \this@fancyput=\toks24
@@ -192,46 +192,46 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \Verbatim@Infile=\read2
 ) (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2023-01-16 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
 )
-Package: csvsimple 2022/09/20 v2.3.2 LaTeX CSV file processing
+Package: csvsimple 2022/02/01 v2.3.0 LaTeX CSV file processing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple-legacy.sty
-Package: csvsimple-legacy 2022/09/20 version 2.3.2 LaTeX2e CSV file processing
+Package: csvsimple-legacy 2022/02/01 version 2.3.0 LaTeX2e CSV file processing
 
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks26
-\pgfutil@tempdima=\dimen148
-\pgfutil@tempdimb=\dimen149
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box59
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+\pgfutil@tempdima=\dimen146
+\pgfutil@tempdimb=\dimen147
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box58
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks27
 \pgfkeys@temptoks=\toks28
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
-.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
 \pgfkeys@tmptoks=\toks29
 ))) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count272
+\etb@tempcnta=\count275
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 \csv@file=\read3
-\c@csvinputline=\count273
-\c@csvrow=\count274
-\c@csvcol=\count275
+\c@csvinputline=\count276
+\c@csvrow=\count277
+\c@csvcol=\count278
 \csv@out=\write4
 )
 (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
@@ -247,55 +247,57 @@ Loading configuration file...
 \AMC@logfile=\write5
 \openout5 = `amc-compiled.amc'.
 
-\AMCload@counter=\count276
-\AMCid@quest=\count277
-\AMCid@check=\count278
-\AMCid@etud=\count279
-\AMCid@etudstart=\count280
-\AMCid@etudfin=\count281
-\AMCnum@copies=\count282
-\AMCformVSpace=\dimen150
-\AMCformHSpace=\dimen151
-\AMCinterIrep=\dimen152
-\AMCinterBrep=\dimen153
-\AMCinterIquest=\dimen154
-\AMCinterBquest=\dimen155
-\AMCpostNquest=\dimen156
-\AMCpostOquest=\dimen157
-\AMCids@width=\dimen158
-\AMCids@height=\dimen159
-\AMC@SR=\count283
-\AMC@SR@count=\count284
-\AMC@SRnum=\count285
-\AMC@sti=\count286
-\AMC@stil=\count287
+\AMCload@counter=\count279
+\AMCid@quest=\count280
+\AMCid@check=\count281
+\AMCid@etud=\count282
+\AMCid@etudstart=\count283
+\AMCid@etudfin=\count284
+\AMCnum@copies=\count285
+\AMCformVSpace=\dimen148
+\AMCformHSpace=\dimen149
+\AMCinterIrep=\dimen150
+\AMCinterBrep=\dimen151
+\AMCinterIquest=\dimen152
+\AMCinterBquest=\dimen153
+\AMCpostNquest=\dimen154
+\AMCpostOquest=\dimen155
+\AMCids@width=\dimen156
+\AMCids@height=\dimen157
+\AMC@SR=\count286
+\AMC@SR@count=\count287
+\AMC@SRnum=\count288
+\AMC@sti=\count289
+\AMC@stil=\count290
 \AMCsw@p@=\toks31
-\AMC@numerotation=\count288
-\AMC@smashbox=\box60
-\AMC@smashboxheight=\dimen160
-\c@AMC@ncase=\count289
-\AMC@boxedrule=\skip61
-\AMC@crossrule=\skip62
-\AMC@boxeddown=\skip63
-\AMC@boxedwidth=\skip64
-\AMC@boxedheight=\skip65
-\AMC@oval@radius=\skip66
-\AMC@outside@sep=\skip67
-\AMC@CBtaille=\skip68
+\AMC@numerotation=\count291
+\AMC@smashbox=\box59
+\AMC@smashboxheight=\dimen158
+\c@AMC@ncase=\count292
+\AMC@boxedrule=\skip60
+\AMC@crossrule=\skip61
+\AMC@boxeddown=\skip62
+\AMC@boxedwidth=\skip63
+\AMC@boxedheight=\skip64
+\AMC@oval@radius=\skip65
+\AMC@outside@sep=\skip66
+\AMC@CBtaille=\skip67
 \AMCbin@sequence=\toks32
-\AMCbin@number=\count290
-\AMCbin@digit=\count291
-\AMCbin@id=\count292
-\AMCbin@did=\count293
-\AMCbin@ndigits=\count294
-\AMCbin@hsep=\dimen161
-\AMCtok@k=\count295
-\AMCtok@max=\count296
-\AMCtok@size=\count297
-\AMC@imax=\count298
-\AMCtok@ik=\count299
-\AMCloop@k=\count300
-\AMCrep@count=\count301
+\AMCbin@number=\count293
+\AMCbin@digit=\count294
+\AMCbin@id=\count295
+\AMCbin@did=\count296
+\AMCbin@ndigits=\count297
+\AMCbin@hsep=\dimen159
+\AMCtok@k=\count298
+\AMCtok@max=\count299
+\AMCtok@size=\count300
+\AMC@imax=\count301
+\AMCtok@ik=\count302
+\AMCloop@k=\count303
+\AMCrep@count=\count304
+\AMCrep@nn=\count305
+\AMCrep@nnmax=\count306
 \reponse@cxcix=\toks33
 \reponse@cxcviii=\toks34
 \reponse@cxcvii=\toks35
@@ -495,51 +497,59 @@ Loading configuration file...
 \reponse@iii=\toks229
 \reponse@ii=\toks230
 \reponse@i=\toks231
-\AMCnum@questions=\count302
-\AMCrep@@count=\count303
-\amc_memory_elts_count=\count304
-\AMChorizAnswerSep=\skip69
-\AMChorizBoxSep=\skip70
-\AMC@mn@test=\skip71
-\AMC@mn@sep=\skip72
-\AMC@mn@leftmargin=\skip73
-\AMC@mn@rightmargin=\skip74
-\AMC@sz@width=\skip75
-\AMC@sz@height=\skip76
-\AMC@sz@depth=\skip77
-\AMC@sza@width=\skip78
-\AMC@sza@height=\skip79
-\AMC@sza@depth=\skip80
-\c@AMCquestionaff=\count305
-\ouverte@vs=\dimen162
-\AMC@chiffres=\count306
-\AMCcodeHspace=\dimen163
-\AMCcodeVspace=\dimen164
-\amc_code_digit_n_int=\count307
-\amc_multi_count_int=\count308
-\amc_num_exponent_int=\count309
-\amc_todigits_int=\count310
-\AMCnumeric@Hspace=\dimen165
-\AMCnumeric@Vspace=\dimen166
-\amc_num_ndigits_int=\count311
-\amc_num_decd_int=\count312
-\amc_num_expo_int=\count313
-\amc_num_base_int=\count314
-\amc_num_exact_int=\count315
-\amc_num_approx_int=\count316
-\amc_num_digit_value_int=\count317
-\amc_num_first_digit_int=\count318
-\amc_num_digit_int=\count319
-\amc_num_sign_int=\count320
-\amc_num_expo_sign_int=\count321
-\amc_num_correct_expo_int=\count322
-\AMCopen@Hspace=\dimen167
-\AMCopen@LineHeight=\dimen168
-\AMCopen@Lines=\count323
-\AMCopen@boxmargin=\dimen169
-\AMCopen@boxframerule=\dimen170
-\AMCopen@framerule=\dimen171
-\AMC@addpages=\count324
+\AMCnum@questions=\count307
+\AMCrep@@count=\count308
+\amc_memory_elts_count=\count309
+\c@AMC@specsi=\count310
+\AMC@coli=\count311
+\AMC@tf@ncols=\count312
+\AMCformTH=\dimen160
+\AMC@tfcolw=\dimen161
+\AMC@tfaw=\dimen162
+\AMC@tfbox=\box60
+\AMChorizAnswerSep=\skip68
+\AMChorizBoxSep=\skip69
+\AMC@mn@test=\skip70
+\AMC@mn@sep=\skip71
+\AMC@mn@leftmargin=\skip72
+\AMC@mn@rightmargin=\skip73
+\AMC@sz@width=\skip74
+\AMC@sz@height=\skip75
+\AMC@sz@depth=\skip76
+\AMC@sza@width=\skip77
+\AMC@sza@height=\skip78
+\AMC@sza@depth=\skip79
+\c@AMCquestionaff=\count313
+\ouverte@vs=\dimen163
+\AMC@chiffres=\count314
+\AMCcodeHspace=\dimen164
+\AMCcodeVspace=\dimen165
+\amc_code_digit_n_int=\count315
+\amc_multi_count_int=\count316
+\amc_num_exponent_int=\count317
+\amc_todigits_int=\count318
+\AMCnumeric@Hspace=\dimen166
+\AMCnumeric@Vspace=\dimen167
+\amc_num_ndigits_int=\count319
+\amc_num_decd_int=\count320
+\amc_num_expo_int=\count321
+\amc_num_base_int=\count322
+\amc_vheadunitindex_int=\count323
+\amc_num_exact_int=\count324
+\amc_num_approx_int=\count325
+\amc_num_digit_value_int=\count326
+\amc_num_first_digit_int=\count327
+\amc_num_digit_int=\count328
+\amc_num_sign_int=\count329
+\amc_num_expo_sign_int=\count330
+\amc_num_correct_expo_int=\count331
+\AMCopen@Hspace=\dimen168
+\AMCopen@LineHeight=\dimen169
+\AMCopen@Lines=\count332
+\AMCopen@boxmargin=\dimen170
+\AMCopen@boxframerule=\dimen171
+\AMCopen@framerule=\dimen172
+\AMC@addpages=\count333
 
 (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
@@ -558,17 +568,17 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count325
-\Gm@cntv=\count326
-\c@Gm@tempcnt=\count327
-\Gm@bindingoffset=\dimen172
-\Gm@wd@mp=\dimen173
-\Gm@odd@mp=\dimen174
-\Gm@even@mp=\dimen175
-\Gm@layoutwidth=\dimen176
-\Gm@layoutheight=\dimen177
-\Gm@layouthoffset=\dimen178
-\Gm@layoutvoffset=\dimen179
+\Gm@cnth=\count334
+\Gm@cntv=\count335
+\c@Gm@tempcnt=\count336
+\Gm@bindingoffset=\dimen173
+\Gm@wd@mp=\dimen174
+\Gm@odd@mp=\dimen175
+\Gm@even@mp=\dimen176
+\Gm@layoutwidth=\dimen177
+\Gm@layoutheight=\dimen178
+\Gm@layouthoffset=\dimen179
+\Gm@layoutvoffset=\dimen180
 \Gm@dimlist=\toks232
 )
 \AMC@XYFILE=\write6
@@ -576,24 +586,24 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
-\c@tracingmulticols=\count328
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count337
 \mult@box=\box61
-\multicol@leftmargin=\dimen180
-\c@unbalance=\count329
-\c@collectmore=\count330
-\doublecol@number=\count331
-\multicoltolerance=\count332
-\multicolpretolerance=\count333
-\full@width=\dimen181
-\page@free=\dimen182
-\premulticols=\dimen183
-\postmulticols=\dimen184
-\multicolsep=\skip81
-\multicolbaselineskip=\skip82
+\multicol@leftmargin=\dimen181
+\c@unbalance=\count338
+\c@collectmore=\count339
+\doublecol@number=\count340
+\multicoltolerance=\count341
+\multicolpretolerance=\count342
+\full@width=\dimen182
+\page@free=\dimen183
+\premulticols=\dimen184
+\postmulticols=\dimen185
+\multicolsep=\skip80
+\multicolbaselineskip=\skip81
 \partial@page=\box62
 \last@line=\box63
-\maxbalancingoverflow=\dimen185
+\maxbalancingoverflow=\dimen186
 \mult@rightbox=\box64
 \mult@grightbox=\box65
 \mult@firstbox=\box66
@@ -634,15 +644,15 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \@tempa=\box101
 \@tempa=\box102
 \@tempa=\box103
-\c@minrows=\count334
-\c@columnbadness=\count335
-\c@finalcolumnbadness=\count336
-\last@try=\dimen186
-\multicolovershoot=\dimen187
-\multicolundershoot=\dimen188
+\c@minrows=\count343
+\c@columnbadness=\count344
+\c@finalcolumnbadness=\count345
+\last@try=\dimen187
+\multicolovershoot=\dimen188
+\multicolundershoot=\dimen189
 \mult@nat@firstbox=\box104
 \colbreak@box=\box105
-\mc@col@check@num=\count337
+\mc@col@check@num=\count346
 )
 
 Package fontspec Info: Font family 'LinuxLibertineO(0)' created for font
@@ -692,7 +702,7 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 6.
@@ -804,8 +814,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\grB@k=\count338
-\AMCgrB@j=\count339
+\grB@k=\count347
+\AMCgrB@j=\count348
 \grB@i=\toks233
 
 AMC:copies:total=5
@@ -835,12 +845,12 @@ AMC:copies:add=1
 AMC:copies:add=1
 (./amc-compiled.aux) ) 
 Here is how much of TeX's memory you used:
- 8613 strings out of 476775
- 203748 string characters out of 5808212
- 1847991 words of memory out of 5000000
- 28646 multiletter control sequences out of 15000+600000
- 512830 words of font info for 50 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 87i,16n,91p,341b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 8602 strings out of 478158
+ 203235 string characters out of 5853402
+ 548225 words of memory out of 5000000
+ 29098 multiletter control sequences out of 15000+600000
+ 469802 words of font info for 46 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 88i,16n,91p,335b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on amc-compiled.pdf (5 pages).

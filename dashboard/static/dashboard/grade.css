@@ -1,0 +1,46 @@
+.content-wrapper{
+      height: 100%;
+      width: 90%;
+      margin-left: 5vw;
+      margin-right: 5vw;
+
+}
+
+.students-wrapper{
+      border: 1px solid black;
+      height: 100%;
+      width: 70%;
+      display: flex;
+}
+
+.actions-wrapper{
+      height: 100%;
+      max-height: 100%;
+      width: 30%;
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      overflow-x: hidden;
+}
+
+.student-list{
+      list-style-type: none;
+}
+
+.student{
+      background: red;
+      border-radius: 10px;
+      font-size: 2rem;
+      width: 300px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.student:hover{
+      background: rgb(207, 0, 0);
+      cursor: pointer;
+}
