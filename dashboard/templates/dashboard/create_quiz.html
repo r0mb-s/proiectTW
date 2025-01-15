@@ -51,7 +51,7 @@
         <div class="content-wrapper">
             <h2>Add Quiz to {{ class.name }}</h2>
             <div class="form-container">
-                <form method="POST" class="formular" action="{% url 'create_quiz' class_id=1 %}">
+                <form method="POST" class="formular" action="{% url 'create_quiz' class_id=1 %}" id="questionFormular">
                     {% csrf_token %}
                     <div class="formular-name-area">
                         <label for="name">Nume:</label>
