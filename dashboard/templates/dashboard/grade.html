@@ -42,7 +42,7 @@
             <div class="actions-wrapper">
                   <h2>Upload Photos</h2>
                   <!-- File Input -->
-                  <form id="uploadForm" method="POST" enctype="multipart/form-data" action="{% url 'takegrade' %}">
+                  <form id="uploadForm" method="POST" enctype="multipart/form-data" action="{% url 'takegrade' class_id=class.id quiz_id=quiz.id %}">
                       {% csrf_token %}
                       <input type="file" id="photoInput" name="photos[]" accept="image/*" multiple>
                       <div id="photoContainer" class="photo-container"></div>

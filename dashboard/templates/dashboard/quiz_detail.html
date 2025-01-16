@@ -53,7 +53,7 @@
                 <h1> Quiz: {{ quiz.name }}</h1>
                 </div>
                 <div class="grade-wrapper">
-                    <button class="grade-button" data-url="{% url 'grade' class_id=class.id %}" id="gradeButton"> Grade paper</button>
+                    <button class="grade-button" data-url="{% url 'grade' class_id=class.id quiz_id=quiz.id %}" id="gradeButton"> Grade paper</button>
                 </div>
             </div>
             <div class="pdf-wrapper">

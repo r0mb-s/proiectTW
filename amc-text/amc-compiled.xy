@@ -1,6 +1,6 @@
-\version{2024/11/25 v1.6.0+git20241125112225 r:7257c566}
+\version{2023/02/06 v1.6.0 r:47896cea}
 \with{codedigit=dot}
-\with{version=2024/11/25 v1.6.0+git20241125112225 r:7257c566}
+\with{version=2023/02/06 v1.6.0 r:47896cea}
 \with{ensemble=no}
 \with{insidebox=no}
 \with{outsidebox=no}
@@ -9,7 +9,6 @@
 \with{lang=}
 \with{ncopies=default}
 \question{1}{Q001}
-\questionnum{1}{1}{1}
 \page{1/1/60}{614.295pt}{794.96999pt}{614.295pt}{794.96999pt}
 \tracepos{1/1:positionHG}{0sp}{47825829sp}{square}
 \tracepos{1/1:positionHG}{4661700sp}{0sp}{square}
@@ -35,7 +34,6 @@
 \tracepos{1/1:positionBD}{35596737sp}{0sp}{square}
 \tracepos{1/1:positionBD}{0sp}{2797020sp}{square}
 \question{1}{Q001}
-\questionnum{2}{1}{1}
 \page{2/1/59}{614.295pt}{794.96999pt}{614.295pt}{794.96999pt}
 \tracepos{2/1:positionHG}{0sp}{47825829sp}{square}
 \tracepos{2/1:positionHG}{4661700sp}{0sp}{square}
@@ -61,7 +59,6 @@
 \tracepos{2/1:positionBD}{35596737sp}{0sp}{square}
 \tracepos{2/1:positionBD}{0sp}{2797020sp}{square}
 \question{1}{Q001}
-\questionnum{3}{1}{1}
 \page{3/1/58}{614.295pt}{794.96999pt}{614.295pt}{794.96999pt}
 \tracepos{3/1:positionHG}{0sp}{47825829sp}{square}
 \tracepos{3/1:positionHG}{4661700sp}{0sp}{square}
@@ -87,7 +84,6 @@
 \tracepos{3/1:positionBD}{35596737sp}{0sp}{square}
 \tracepos{3/1:positionBD}{0sp}{2797020sp}{square}
 \question{1}{Q001}
-\questionnum{4}{1}{1}
 \page{4/1/57}{614.295pt}{794.96999pt}{614.295pt}{794.96999pt}
 \tracepos{4/1:positionHG}{0sp}{47825829sp}{square}
 \tracepos{4/1:positionHG}{4661700sp}{0sp}{square}
@@ -113,7 +109,6 @@
 \tracepos{4/1:positionBD}{35596737sp}{0sp}{square}
 \tracepos{4/1:positionBD}{0sp}{2797020sp}{square}
 \question{1}{Q001}
-\questionnum{5}{1}{1}
 \page{5/1/56}{614.295pt}{794.96999pt}{614.295pt}{794.96999pt}
 \tracepos{5/1:positionHG}{0sp}{47825829sp}{square}
 \tracepos{5/1:positionHG}{4661700sp}{0sp}{square}

@@ -14,7 +14,7 @@ urlpatterns = [
     path('auth/', include('social_django.urls', namespace='social')),
     path('profile/', views.profile_view, name='profile_view'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
-    path('grade/<int:class_id>/', views.grade, name='grade'),
-    path('takegrade/', views.takegrade, name='takegrade'),
+    path('grade/<int:class_id>/<int:quiz_id>', views.grade, name='grade'),
+    path('takegrade/<int:class_id>/<int:quiz_id>', views.takegrade, name='takegrade'),
 ]
 
