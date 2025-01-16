@@ -243,19 +243,24 @@ def custom_logout(request):
     logout(request)  # Django's built-in logout function
     return redirect('/')  # Redirect to home or any page you prefer
 
-def grade(request, class_id):
+def grade(request, class_id, quiz_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
+    quiz_obj = get_object_or_404(Quiz, id=quiz_id)
     students = class_obj.students.all()
-    return render(request, 'dashboard/grade.html',{'class': class_obj, 'students': students})
+    return render(request, 'dashboard/grade.html',{'class': class_obj, 'students': students, 'quiz': quiz_obj})
 
-def takegrade(request):
+def takegrade(request, class_id, quiz_id):
     if request.method == "POST":
         uploaded_files = request.FILES.getlist("photos[]")
         saved_files = []
 
-        for file in uploaded_files:
-            file_name = default_storage.save(f"uploads/{file.name}", file)
-            saved_files.append(file_name)
+        
+        quiz_name = get_object_or_404(Quiz, id=quiz_id).name
+        file = uploaded_files[0]
+        file_name = default_storage.save(f"uploads/{file.name}", file)
+        print(file_name)
+        result = subprocess.run(["amc-helper/make.sh", "./media/" + file_name, "./amc-helper/" + quiz_name + str(class_id)], capture_output=True, text=True)
+        print(result.stdout)
 
         return JsonResponse({"message": "Files uploaded successfully", "files": saved_files})
     return JsonResponse({"error": "Invalid request"}, status=400)
