@@ -12,6 +12,7 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.storage import default_storage
+import shutil
 
 import subprocess
 # from reportlab.pdfgen import canvas
@@ -189,7 +190,20 @@ def quiz_detail(request, class_id, quiz_id):
     class_obj = get_object_or_404(QuizClass, id=class_id)
     quiz_obj = get_object_or_404(Quiz, id=quiz_id)
     classes = QuizClass.objects.filter(account_mail = request.user.email)
-    pdf_path = "./amc-helper/test1/DOC-subject.pdf";
+    pdf_path = "./amc-helper/" + quiz_obj.name + str(class_id) + "/DOC-subject.pdf";
+    print(pdf_path)
+    result = subprocess.run(["rm", "./dashboard/static/DOC-subject.pdf"], capture_output=True, text=True)
+    result = subprocess.run(["cp", pdf_path, "./dashboard/static/"], capture_output=True, text=True)
+    print("ASDASdsadasdasdD: " + result.stdout)
+    try:
+        shutil.copyfile(pdf_path, "./dashboard/static/")
+        print(f"File copied successfully from {pdf_path} to ./dashboard/static/")
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+    except PermissionError as e:
+        print(f"Permission Error: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
     
     return render(request, 'dashboard/quiz_detail.html', {'class': class_obj, 'quiz': quiz_obj, 'classes': classes, 'pdf_path': pdf_path})
 
@@ -261,6 +275,15 @@ def takegrade(request, class_id, quiz_id):
         print(file_name)
         result = subprocess.run(["amc-helper/make.sh", "./media/" + file_name, "./amc-helper/" + quiz_name + str(class_id)], capture_output=True, text=True)
         print(result.stdout)
+        import csv
 
-        return JsonResponse({"message": "Files uploaded successfully", "files": saved_files})
+
+        with open("./amc-helper/" + quiz_name + str(class_id) + "/grades.csv", mode='r') as file:
+            reader = csv.reader(file)
+            rows = list(reader)
+
+        score = rows[1][3]
+        print(f"Extracted score: {score}")
+
+        return JsonResponse({"message": "Files uploaded successfully", "score": score})
     return JsonResponse({"error": "Invalid request"}, status=400)

@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{xltxtra}
+\usepackage[bloc,completemulti]{automultiplechoice}
+\usepackage{multicol}
+\setmainfont{Linux Libertine O}
+\begin{document}
+\def\AMCmakeTitle#1{\par\noindent\hrule\vspace{1ex}{\hspace*{\fill}\Large\bf #1\hspace*{\fill}}\vspace{1ex}\par\noindent\hrule\par\vspace{1ex}}
+\AMCrandomseed{1527384}
+
+\element{grB}{
+\begin{question}{Q001}
+q1
+\begin{choices}
+\wrongchoice{q1a1}
+\correctchoice{q1a2}
+\correctchoice{q1a3}
+\end{choices}
+\end{question}
+}
+\element{grB}{
+\begin{question}{Q002}
+q2
+\begin{choices}
+\correctchoice{q2a1}
+\wrongchoice{q2a2}
+\end{choices}
+\end{question}
+}
+\def\insertPlainGroupgrB{\insertgroup{grB}}
+\onecopy{5}{
+\begin{minipage}{.47\linewidth}
+\begin{center}\bf\large Test\end{center}
+
+\end{minipage}\hfill
+\begin{minipage}{.47\linewidth}
+\namefield{\fbox{\begin{minipage}{.9\linewidth}\AMClocalized{namesurname}
+
+\vspace*{.5em}\dotfill
+\vspace*{1mm}
+\end{minipage}
+}}\end{minipage}\vspace{4mm}
+
+Răspundeți la întrebările cu răspuns multiplu.
+
+\vspace{4mm}\noindent\hrule
+
+
+\shufflegroup{grB}
+\vspace{2ex}
+
+\insertPlainGroupgrB
+
+
+}
+\end{document}
